@@ -5,6 +5,7 @@ RUN addgroup -S flexget \
  && apk add --no-cache --update \
 	python \
 	py-pip \
+ && pip install certifi \
  && pip install transmissionrpc \
  && pip install flexget
 
