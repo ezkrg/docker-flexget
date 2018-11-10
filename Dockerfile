@@ -1,4 +1,8 @@
-FROM alpine:3.6
+FROM alpine:3.8
+
+ENV WEBPASSWORD=flexget
+
+ADD entrypoint.sh /entrypoint.sh
 
 RUN addgroup -S flexget \
  && adduser -S -G flexget -s /usr/sbin/nologin -h /var/lib/flexget flexget \ 
@@ -13,4 +17,6 @@ EXPOSE 5050
 
 USER flexget
 
-ENTRYPOINT [ "/usr/bin/flexget", "daemon", "start" ]
+ENTRYPOINT [ "sh", "/entrypoint.sh" ]
+
+CMD [ "/usr/bin/flexget", "daemon", "start" ]
