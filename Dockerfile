@@ -7,8 +7,8 @@ ADD entrypoint.sh /entrypoint.sh
 RUN addgroup -S flexget \
  && adduser -S -G flexget -s /usr/sbin/nologin -h /var/lib/flexget flexget \ 
  && apk add --no-cache --update \
-	python \
-	py-pip \
+	python3 \
+	py3-pip \
  && pip install certifi \
  && pip install transmissionrpc \
  && pip install flexget
