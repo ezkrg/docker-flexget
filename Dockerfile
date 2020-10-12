@@ -11,7 +11,7 @@ RUN addgroup -S flexget \
 	py3-pip \
  && pip install certifi \
  && pip install transmissionrpc \
- && pip install flexget
+ && pip install --ignore-installed flexget
 
 EXPOSE 5050
 
